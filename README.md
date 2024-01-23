@@ -1,6 +1,6 @@
 # Hotel Landing Page
 
-##Built using:
+## Built using:
 - HTML
 - CSS
 - JavaScript
