@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Designpace</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-JNmIVUFYzXCEP27E37CwmYwF6pAB2QM4ouB/fF7lSca5h48CIT1yf6Ookl9n2FZkP+4XTteZ2WyIq8mLqrWlDw==" crossorigin="anonymous" />
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-brand">
+            <span class="website-name">Designpace</span>
+        </div>
+        <div class="navbar-links">
+            <a href="#" class="nav-link">Booking</a>
+            <a href="#" class="nav-link">Facilities</a>
+            <a href="#" class="nav-link">Room</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="login-button">Login</button>
+            <button class="signup-button">Sign Up</button>
+        </div>
+    </div>
+
+    <header class="section_container">
+        <div class="header_image_container">
+            <img src="assets/MainImage.png">
+        </div>
+        <div class="header_content">
+            <div class="content">
+                <h1>Experience something new every moment</h1>
+                <p>Escape to a place where you can relax and unwind, rejuvenate, and reconnect</p>
+            </div>
+        </div>
+        
+        <div class="booking-bar">
+          <div class="booking-column">
+              <label for="location">
+                  <img src="assets/location_icon.png" alt="Location Icon">
+                  Location
+              </label>
+              <div class="dropdown">
+                  <span id="selectedOption">Bali, Indonesia</span>
+                  <img src="assets/dropdown-icon.png" alt="Dropdown Icon">
+                  <div class="dropdown-content">
+                      <!-- Dummy location options -->
+                      <span>Bali, Indonesia</span>
+                      <span>Paris, France</span>
+                      <span>New York, USA</span>
+                      <span>Colombo, Sri Lanka</span>
+                      <span>Delhi, India</span>
+                      <span>Sydney, Australia</span>
+                      <span>Daka, Bangladesh</span>
+                      <span>Tokyo, Japan</span>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="vertical-line"></div>
+      
+          <div class="booking-column">
+              <label for="check-in">
+                  <img src="assets/calender-icon.png" alt="Calendar Icon">
+                  Check-in
+              </label>
+              <div class="dropdown">
+                  <span id="selectedCheckIn">08 Nov 2024</span>
+                  <img src="assets/dropdown-icon.png" alt="Dropdown Icon" class="dropdown-icon">
+                  <div class="dropdown-content datepicker-content">
+                      <!-- Calendar will be added dynamically by JavaScript -->
+                  </div>
+              </div>
+          </div>
+      
+          <div class="vertical-line"></div>
+      
+          <div class="booking-column">
+              <label for="check-out">
+                  <img src="assets/calender-icon.png" alt="Calendar Icon">
+                  Check-out
+              </label>
+              <div class="dropdown">
+                  <span id="selectedCheckOut">12 Nov 2024</span>
+                  <img src="assets/dropdown-icon.png" alt="Dropdown Icon" class="dropdown-icon">
+                  <div class="dropdown-content datepicker-content">
+                      <!-- Calendar will be added dynamically by JavaScript -->
+                  </div>
+              </div>
+          </div>
+      
+          <div class="vertical-line"></div>
+      
+          <div class="booking-column">
+              <label for="room">
+                  <img src="assets/person_icon.png" alt="Room Icon">
+                  Room
+              </label>
+              <div class="dropdown">
+                  <span id="selectedOption">1 Room, 3 Guest</span>
+                  <img src="assets/dropdown-icon.png" alt="Dropdown Icon" class="dropdown-icon">
+                  <div class="dropdown-content">
+                      <!-- Dummy room options -->
+                      <span>2 Room, 4 Guest</span>
+                      <span>2 Room, 5 Guest more</span>
+                      <span>3 Room, 6 Guest</span>
+                      <span>4 Room, 6 Guest</span>
+                      <span>4 Room, 8 Guest</span>
+                      <span>5 Room, 10 Guest</span>
+                      <span>5 Room, 12 Guest</span>
+                      <!-- Add more options as needed -->
+                  </div>
+              </div>
+          </div>
+      
+          <button class="round-button" onclick="search()">
+              <img src="assets/search_icon.png" alt="Search Icon">
+              Search
+          </button>
+      </div>
+    </header>
+
+        <section class="offer_container">
+            <div class="selection_container">
+            <div class="container ">
+              <h2 class="section__header">Best offer For this month</h2>
+              <div class="offer__grid">
+                <div class="offer__card">
+                  <img src="assets/offer1.png" alt="offer" />
+                  
+                   50% OFF
+                  
+                </div>
+                <div class="offer__card">
+                  <img src="assets/offer2.png" alt="offer" />
+                  
+                    30% OFF
+                  
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+
+        <section class="section_container">
+            <div class="container">
+            <h2 class="section__header">Explore Popular Hotels</h2>
+            <div class="view-all-button">
+                <button id="viewAllButton">View All</button>
+              </div>
+            <div class="popular__grid">
+              <div class="popular__card">
+                <img src="assets/hotel1.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>Grand Maranga Ubud</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Bali, Indonesia</p>
+                </div>
+              </div>
+              <div class="popular__card">
+                <img src="assets/hotel2.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>Royal Gremasha</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Paris, France</p>
+                </div>
+              </div>
+              <div class="popular__card">
+                <img src="assets/hotel3.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>The Maansava</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Paris, France</p>
+                </div>
+              </div>
+              <div class="popular__card">
+                <img src="assets/hotel4.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>Hurgasi Hotel</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Rome, Italy</p>
+                </div>
+              </div>
+              <div class="popular__card">
+                <img src="assets/hotel5.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>The Victoria Group</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Istanbul, Turkey</p>
+                </div>
+              </div>
+              <div class="popular__card">
+                <img src="assets/hotel6.png" alt="popular hotel" />
+                <div class="popular__content">
+                  <div class="popular__card__header">
+                    <h4>Ritz Yokama Hotel</h4>
+                    <h4>$240</h4>
+                  </div>
+                  <p>Tokyo, Japan</p>
+                </div>
+              </div>
+            </div>
+        </div>
+          </section>
+
+          <section class="facility_container">
+            <div class="section_container">
+                <div class="container">
+                       
+            <div class="about-left">
+                <h1>We care for each guest like a family</h1>
+                <div class="address">
+                    <ul>
+                        <li>
+                            <span class="address-logo">
+                                <img src="assets/hotelicon.png"/>
+                            </span>
+                            <p>Best quality Hotel</p>
+                        </br>
+                        </li>
+                        <li>
+                            <span class="address-logo">
+                                <img src="tagicon.png"/>
+                            </span>
+                            <p>Low price & many promo</p>
+                        </br>
+                        </li>
+                        <li>
+                            <span class="address-logo">
+                                <img src="assets/guarantIcon.png"/>
+                            </span>
+                            <p>Money back guarantee</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+             <!-- about left  -->
+             <div class="about-right">
+                <div class="card">
+                <img src="assets/guest.png" alt="About Img"/>
+            </div>
+            </div>        
+        </div>
+        </div>
+        </section>
+
+          <section class="section_container">
+            <div class="container ">
+               <h2 class="section__header">What our client say</h2> 
+               <div class="view-all-button">
+                <button id="viewAllButton">View All</button>
+              </div>            
+               <div class="client__grid">
+                <div class="client__card">                 
+                  <p>
+                    Designspace is a really great site with really great people and the quality of content is excellent. Some of the best designers in the world use this, and it is inspirational.
+                  </p>
+                  <img src="assets/client1.png" alt="client" />
+                  <div class="client_about">
+                  <p><b>Angela Karamoy</b></p>
+                  <p>Happy Customer</p>
+                </div>
+                </div>
+
+                <div class="client__card">                
+                  <p>
+                    Designspace has consistently delivered above and beyond my expectations! Brilliant design work, incredible response time and a really friendly team. 
+                    I strongly recommend them.
+                  </p>
+                  <img src="assets/client2.png" alt="client" />
+                  <div class="client_about">
+                  <p><b>Jessica Zhui</b></p>
+                  <p>Happy Customer</p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+         <section class="subscribe">
+            <div class="section_container">            
+              <h2 class="section__header">Subscribe newsletter & get latest news</h2>
+              <form class="subscribe__form">
+                <input type="text" placeholder="Enter your email address" />
+                <button class="btn">Get Started</button>
+              </form>
+            </div>            
+          </section>
+
+          <hr>
+      
+          <footer class="footer">
+            <div class="section_container">
+            <div class=" footer__container">
+              <div class="footer__col">
+                <h3>Designpace</h3>
+                <p>
+                  Designpace is a premier hotel booking website that offers a seamless and
+                  convenient way to find and book accommodations worldwide.
+                </p>
+                <p>
+                  With a user-friendly interface and a vast selection of hotels,
+                  WDM&Co aims to provide a stress-free experience for travelers
+                  seeking the perfect stay.
+                </p>
+              </div>
+              <div class="footer__col">
+                <div class="footer__col_right">
+                <h4>Company</h4>
+                <p>About us</p>
+                <p>Testimonial</p>
+                <p>Term of services</p>
+                <p>Privacy Policy</p>
+                <p>Investor</p>
+            </div>
+              </div>
+              <div class="footer__col">
+                <div class="footer__col_right">
+                <h4>Services</h4>
+                <p>Booking</p>
+                <p>Support center</p>
+                <p>Blog</p>
+                <p>Review</p>
+                <p>Room</p>
+            </div>
+              </div>
+              <div class="footer__col">
+                <div class="footer__col_right">
+                <h4>Resources</h4>
+                <p>Help center</p>
+                <p>Guide</p>
+                <p>Partner Network</p>
+                <p>FAQ'S</p>
+                <p>Documentation</p>
+            </div>
+              </div>
+            </div>
+        </div>
+          </footer>
+          
+    <script src="script.js"></script>
+
+</body>
+</html>
